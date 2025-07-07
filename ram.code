@@ -1,0 +1,21 @@
+// Synchronous RAM Module
+module RAM (
+    input clk,                 // Clock
+    input we,                  // Write Enable
+    input [3:0] addr,          // 4-bit Address (16 locations)
+    input [7:0] din,           // Data input (8-bit)
+    output reg [7:0] dout      // Data output (8-bit)
+);
+
+    // Declare memory block
+    reg [7:0] memory [0:15];
+
+    always @(posedge clk) begin
+        if (we) begin
+            memory[addr] <= din;      // Write operation
+        end else begin
+            dout <= memory[addr];     // Read operation
+        end
+    end
+
+endmodule

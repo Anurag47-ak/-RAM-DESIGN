@@ -94,6 +94,10 @@ I ran the simulation using EDA playground and viewed the waveform in EP Waveform
 
 This visual verification helped me understand the synchronization with the clock signal and the behavior of memory storage in digital systems.
 
+OUTPUT(WAVEFORM) : 
+
+   ![Image](https://github.com/user-attachments/assets/330a21a5-92c8-48f3-979a-165a20382e8e)
+
 Conclusion:
 This task gave me a clear understanding of how RAM works at a hardware level. Writing the Verilog code was straightforward once I understood the structure, but the most interesting part was seeing the simulation and watching the memory operate cycle by cycle. It was especially exciting to visualize data being written and read.
 By completing this task, I feel much more confident about memory design and have a solid foundation to move forward to more advanced digital design tasks like register files, FIFO memory, or even designing a basic processor. Overall, this task was a very practical and valuable learning experience during my internship.

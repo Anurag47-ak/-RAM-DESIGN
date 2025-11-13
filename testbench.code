@@ -1,12 +1,10 @@
 // Testbench for RAM Module
 module RAM_tb;
-
 reg clk;
 reg we;
 reg [3:0] addr;
 reg [7:0] din;
 wire [7:0] dout;
-
 RAM ram_inst (
     .clk(clk),
     .we(we),
@@ -14,38 +12,28 @@ RAM ram_inst (
     .din(din),
     .dout(dout)
 );
-
 // Generate clock
 always #5 clk = ~clk;
-
 initial begin
     $dumpfile("ram_wave.vcd");
     $dumpvars(0, RAM_tb);
-
     clk = 0;
     we = 1;        // Enable writing
-
     // Write 8'hA5 to address 0
     addr = 4'b0000;
     din = 8'hA5;
     #10;
-
     // Write 8'h3C to address 1
     addr = 4'b0001;
     din = 8'h3C;
     #10;
-
     we = 0;        // Enable reading
-
     // Read from address 0
     addr = 4'b0000;
     #10;
-
     // Read from address 1
     addr = 4'b0001;
     #10;
-
     $finish;
 end
-
 endmodule
